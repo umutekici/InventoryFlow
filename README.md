@@ -26,6 +26,7 @@ Communication between services is handled using MassTransit with RabbitMQ. The S
 
 Upon receiving the request, the Order service attempts to create a purchase order by searching for the matching product on the external Fake Store API, selecting the item with the lowest available price.
 
+
                              +-----------------------------+
                              |      Fake Store API         |
                              | (Fetch & select cheapest)   |
@@ -56,8 +57,41 @@ Upon receiving the request, the Order service attempts to create a purchase orde
                                            |
                                 User Input (POST /products)
 
+---
 
+## How to Run
 
+1. Clone the repo and go to the project folder:
+   git clone https://github.com/umutekici/InventoryFlow.git
+   cd InventoryFlow
+
+2. Run OrderService.API:
+   cd OrderService.API
+   dotnet run
+
+3. Run StockService.API:
+   cd StockService.API
+   dotnet run
+
+---
+
+## Project Architecture
+
+This project is structured into the following layers:
+
+- **Shared message contracts**: Common data transfer objects (DTOs) and contracts shared between services for consistent communication.
+- **External service integration layer**: Handles communication and abstraction with third-party APIs or systems.
+- **Middleware layer**: Cross-cutting concerns like error handling, logging, and authentication handled in the request pipeline.
+
+---
+
+## Technologies Used
+
+- .NET Core 8
+- Swagger
+- MassTransit
+- RabbitMQ
+- MemoryCache
 
 ---
 
