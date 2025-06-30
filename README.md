@@ -146,7 +146,7 @@ The Id value in the JSON object from FakeStoreAPI is matched with the Code field
 
 
 
-**Bonus Task**
+## ⭐ Bonus Task
 
 ![image](https://github.com/user-attachments/assets/63cfe2ce-0c87-49e6-8416-56df60f9fcb1)
 
