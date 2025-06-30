@@ -57,9 +57,7 @@ Upon receiving the request, the Order service attempts to create a purchase orde
                                            |
                                 User Input (POST /products)
 
----
-
-## How to Run
+### Running the Project with .NET CLI Commands
 
 1. Clone the repo and go to the project folder:
    git clone https://github.com/umutekici/InventoryFlow.git
