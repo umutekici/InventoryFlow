@@ -48,7 +48,7 @@ Upon receiving the request, the Order service attempts to create a purchase orde
                                +-----------+-------------+
                                |    Stock Microservice    |
                                |--------------------------|
-                               | POST /orders/check-and-place ←🔁 User triggers here
+                               | POST /orders/check-and-place
                                | → Checks all products
                                | → Detects low-stock
                                | → Publishes events
@@ -86,18 +86,39 @@ json:
 }
 
 **Response:**
+
 ![image](https://github.com/user-attachments/assets/751a4356-e726-4512-b724-07bd4884b706)
 
 
 #### POST `/products/low-stock`  
 
 **Response:**
+
 ![image](https://github.com/user-attachments/assets/60c97b4f-b4ee-4341-bf02-53ecf2414ac7)
 
 
 #### POST `/orders/check-and-place`  
+
 ![image](https://github.com/user-attachments/assets/2ea2fa49-8079-40cf-9346-e219c7ea298b)
 
+After this operation, the order queue is successfully visible on RabbitMQ as shown in the image below:
+
+![image](https://github.com/user-attachments/assets/ece28240-4941-4db2-8728-195ddcdb9f85)
 
 
+The process of finding the product with the lowest price among the products on FakeAPI is performed in the code block below:
+
+![image](https://github.com/user-attachments/assets/3b23a6ac-fe90-4690-aa5d-1b4a22097e9e)
+
+The Id value in the JSON object from FakeStoreAPI is matched with the Code field in the product entities on StockService.
+
+
+
+**Bonus Task**
+
+![image](https://github.com/user-attachments/assets/63cfe2ce-0c87-49e6-8416-56df60f9fcb1)
+
+This method converts a number between 1 and 11 to a Roman numeral by subtracting the largest Roman numeral values and appending the corresponding symbols to the result string.
+
+Thank you for reading!
 
