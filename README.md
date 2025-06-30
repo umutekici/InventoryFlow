@@ -152,5 +152,29 @@ The Id value in the JSON object from FakeStoreAPI is matched with the Code field
 
 This method converts a number between 1 and 11 to a Roman numeral by subtracting the largest Roman numeral values and appending the corresponding symbols to the result string.
 
+### Örnek: 7 Sayısının Roma Rakamına Çevrilmesi
+
+Sayımız: **7**
+
+Dönüştürme işlemi şu adımlarla gerçekleşiyor:
+
+1. Roma rakamlarını ve karşılık gelen değerleri büyükten küçüğe şöyle listeledik:  
+   `10 (X), 9 (IX), 5 (V), 4 (IV), 1 (I)`
+
+2. 7 sayısı ile listeyi baştan kontrol ediyoruz:
+
+   - 7, 10’dan küçük olduğu için atlanır.  
+   - 7, 9’dan küçük olduğu için atlanır.  
+   - 7, 5’e eşit veya büyük olduğu için önce 5 çıkarılır ve sonucu temsil eden `"V"` eklenir. Kalan sayı: `7 - 5 = 2`.  
+   - 2, 4’ten küçük olduğu için atlanır.  
+   - 2, 1’e eşit veya büyük olduğu için `"I"` eklenir ve sayı 1 azalır (2 → 1).  
+   - Sayı hâlâ 1 olduğu için tekrar `"I"` eklenir ve sayı 0 olur.
+
+3. Sonuç olarak, `"V" + "I" + "I" = "VII"` elde edilir.
+
+Bu yöntemle sayı, önce büyük Roma rakamlarından çıkarılarak, kalan parçalara karşılık gelen semboller üst üste eklenir ve doğru Roma rakamı oluşturulur.
+
+---
+
 Thank you for reading!
 
